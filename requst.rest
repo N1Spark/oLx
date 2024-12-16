@@ -1,0 +1,145 @@
+//user
+
+GET https://127.0.0.1:3443/users
+
+###
+POST https://127.0.0.1:3443/users
+Content-Type: application/json
+
+{
+    "login": "Dmytro",
+    "email": "dmytro@gmail.com",
+    "password": "1234",
+    "roleId": 1
+}
+
+###
+
+DELETE https://127.0.0.1:3443/users/delete/2
+
+###
+
+PUT  https://127.0.0.1:3443/users/update/2
+Content-Type: application/json
+
+{
+    "login": "NetSpark",
+    "email": "netspark@mail.com",
+    "password": "nepassword",
+    "roleId": 2
+}
+
+###
+
+//role
+
+GET  https://127.0.0.1:3443/roles
+
+###
+
+GET  https://127.0.0.1:3443/roles/2
+
+###
+
+POST https://127.0.0.1:3443/roles
+Content-Type: application/json
+
+{
+    "name": "User"
+}
+
+###
+
+DELETE   https://127.0.0.1:3443/roles/delete/3
+
+###
+
+PUT  https://127.0.0.1:3443/roles/update/3
+Content-Type: application/json
+
+{
+    "name":"Cleaner"
+}
+
+###
+
+//products
+
+GET https://127.0.0.1:3443/product
+
+###
+
+POST https://127.0.0.1:3443/product
+Content-Type: application/json
+
+{
+    "title": "Iphone 15",
+    "description": "Iphone 15 512Gb",
+    "category": "Phones",
+    "price": 999,
+    "photos": [
+        "img_Ip15_1",
+        "img_Ip15_2",
+        "img_Ip15_3"
+    ]
+}
+
+###
+
+POST https://127.0.0.1:3443/product/search?category=Phones&minPrice=1000&maxPrice=2000
+
+###
+
+DELETE  https://127.0.0.1:3443/product/delete/1
+
+###
+
+PUT https://127.0.0.1:3443/product/update/1
+Content-Type: application/json
+
+{
+    "title": "Samsung S24 Plus",
+    "description": "Samsung Galasy S24 Plus 512Gb",
+    "category": "Phones",
+    "price": 1599,
+    "photos": [
+        "img_24U_1",
+        "img_S24U_2",
+        "img_S24U_3"
+    ]
+}
+
+//messages
+
+###
+
+GET https://127.0.0.1:3443/messages/get?userId=1&chatPartnerId=2&productId=2
+
+###
+
+POST https://127.0.0.1:3443/messages/send
+Content-Type: application/json
+
+{
+  "senderId": 1,
+  "recipientId": 2,
+  "productId": 2,
+  "content": "Hallo, whats up with money?"
+}
+
+###
+
+PATCH https://127.0.0.1:3443/messages/read/1
+Content-Type: application/json
+
+###
+
+//login
+
+POST https://127.0.0.1:3443/users/login
+Content-Type: application/json
+
+{
+    "login": "Dmytro",
+    "password": "1234"
+}
